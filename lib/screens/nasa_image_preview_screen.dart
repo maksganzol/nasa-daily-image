@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nasa_daily_image/bloc/nasa_image_bloc.dart';
 import 'package:nasa_daily_image/bloc/nasa_image_state.dart';
+import 'package:nasa_daily_image/widgets/api_error_widget.dart';
 import 'package:nasa_daily_image/widgets/image_preview_widget.dart';
 
 class NasaImagePreviewScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _NasaImagePreviewScreenState extends State<NasaImagePreviewScreen> {
               child: CircularProgressIndicator(),
             ),
           NasaImageError(error: final error) => Center(
-              child: Text(error.toString()),
+              child: ApiErrorWidget(error: error),
             ),
           NasaImageData(
             image: final image,

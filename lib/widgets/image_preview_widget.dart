@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:nasa_daily_image/widgets/app_network_image.dart';
 
 class ImagePreviewWidget extends StatelessWidget {
   const ImagePreviewWidget({
@@ -25,8 +27,9 @@ class ImagePreviewWidget extends StatelessWidget {
           ),
           SizedBox(height: size.height / 8),
           GestureDetector(
-            child: Image.network(
-              image,
+            onTap: () => context.go('/full-screen'),
+            child: AppNetworkImage(
+              url: image,
               height: size.height / 2,
             ),
           ),

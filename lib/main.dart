@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nasa_daily_image/bloc/nasa_image_bloc.dart';
-import 'package:nasa_daily_image/screens/nasa_image_preview_screen.dart';
+import 'package:nasa_daily_image/router.dart';
 
 import 'setup_dependencies.dart';
 
@@ -21,9 +21,9 @@ class NasaDailyImageApp extends StatelessWidget {
         api: getIt(),
         apiKey: 'IHE6wfIXbhRbcJKIZQTcJt0MmvCPQffEa3Ox70ey',
       )..load(),
-      child: const MaterialApp(
+      child: MaterialApp.router(
         title: 'Nasa Daily Image',
-        home: NasaImagePreviewScreen(),
+        routerConfig: appRouter,
       ),
     );
   }
