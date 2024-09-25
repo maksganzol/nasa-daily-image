@@ -16,6 +16,7 @@ class NasaImageCubit extends Cubit<NasaImageState> {
 
   Future<void> load() async {
     try {
+      print('KEKW $_api');
       final response = await _api.getDailyImage(apiKey: _apiKey);
       if (response.mediaType == MediaType.unsupported) {
         emit(
